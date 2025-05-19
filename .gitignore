@@ -1,0 +1,7 @@
+temp.ipynb
+__pycache__/
+*.pyc
+notebooks/*.py
+*.ipynb_checkpoints
+tests/
+catboost_info/
