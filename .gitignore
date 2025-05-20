@@ -5,3 +5,5 @@ notebooks/*.py
 *.ipynb_checkpoints
 tests/
 catboost_info/
+model_selection.py
+*.cbm

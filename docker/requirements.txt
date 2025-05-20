@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+joblib
+scikit-learn
+numpy
+pydantic
+pandas
+catboost
+category_encoders
