@@ -75,10 +75,6 @@ Impute missing values in the dataset using advanced and customized strategies ac
 - **Saving the imputed dataset:**  
     The dataset with imputed missing values is saved at `../data/processed/03_data_imputed.parquet`.
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/7a97613d-5698-4318-9c86-7419c805e03c" alt="Missing Values Imputation">
-</p>
-
 ---
 
 ## 04_outlier_handling.ipynb
@@ -98,10 +94,6 @@ Detect and analyze outliers in the dataset to decide whether they should be remo
 - **Decision and saving:**  
     If the number of outliers is low or does not affect the analysis, decide not to remove them. The dataset is saved at `../data/processed/04_outlier_handling.parquet`.
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/2ee3e8fd-7250-4855-949b-893e498a458b" alt="Outlier Handling">
-</p>
-
 ---
 
 ## 05_feature_engineering.ipynb
@@ -117,8 +109,6 @@ Create new relevant variables and remove redundant originals to improve the pred
 - **Saving the enriched dataset:**  
     The enriched dataset is saved at `../data/processed/05_feature_engineering.parquet`.
 
-
- 
 ---
 
 ## 06_feature_selection.ipynb
@@ -135,10 +125,6 @@ Select the most relevant variables for the final model using different importanc
     Perform hyperparameter search for regression models (`RandomForest`, `XGBoost`, `CatBoost`, `LightGBM`).
 - **Selection of final variables:**  
     Select the most relevant variables and save the final dataset at `../data/processed/06_feature_selection.parquet`.
-
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/7d68455d-77c6-4aaa-b1e1-12491a54b76a" alt="Feature Selection">
-</p>
 
 ---
 
@@ -157,9 +143,6 @@ Compare and select the best regression model for the problem.
 - **Selection and saving of the best model:**  
     Select the best model and save it for later use.
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/5bf5f077-349e-4663-9a85-a541a7a0b702" alt="Model Selection">
-</p>
 ---
 
 ## 08_model_tuning.ipynb
@@ -177,7 +160,4 @@ Tune and optimize the best selected model to maximize its performance.
 - **Saving the final model:**  
     The tuned model is saved at `../models/catboost_model_pro.cbm`.
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/d8a5066b-d29c-4197-82f5-40dd7dd65d23" alt="Model Tuning">
-</p>
 ---
