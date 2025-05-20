@@ -1,4 +1,4 @@
-# Demo
+# Demo 🏡
 
 ## Summary
 
@@ -11,30 +11,30 @@ For demonstration purposes, due to the large number of columns in the original d
 
 ## Main Steps
 
-- **Loading processed data:**  
+- **Loading processed data:**  📂
     The cleaned and processed dataset is loaded from `../data/processed/04_outlier_handling.parquet`.
 
-- **Preprocessing pipeline:**  
+- **Preprocessing pipeline:**  🛠️
     Includes selection of relevant columns, categorical encoding with CatBoostEncoder, and creation of new features (`total_sqft`, `overall_score`, `total_bathrooms`).
 
-- **Data splitting:**  
+- **Data splitting:**  ✂️
     Separation into training and test sets.
 
-- **Model training and comparison:**  
+- **Model training and comparison:**  🤖📊
     Training of several models (`Bagging`, `Random Forest`, `Gradient Boosting`, `CatBoost`, `LightGBM`, `XGBoost`) and comparison using regression metrics (MAE, MSE, RMSE, R², etc.).
 
-- **Results visualization:**  
+- **Results visualization:**  📈
     Plots of feature importances, residuals, scatter plots, and learning curves.
 
-- **Best model selection and saving:**  
+- **Best model selection and saving:**  🏆💾
     Selection of the best-performing model and saving it in CatBoost format.
 
-- **Hyperparameter tuning:**  
+- **Hyperparameter tuning:**  🎯
     Randomized hyperparameter search for `CatBoost` and evaluation of the tuned model.
 
 ---
 
-## Model Results (test set)
+## Model Results (test set) 📋
 
 **Without hyperparameter tuning:**
 
@@ -53,4 +53,4 @@ For demonstration purposes, due to the large number of columns in the original d
 |----------|-------------|---------------|-------------|----------|----------|---------|
 | CatBoost | 17,337.86   | 6.20e+08      | 24,908.48   | 0.9105   | 0.1377   | 0.1017  |
 
-These results confirm that the simplified pipeline retains most of the predictive power, and that tuning further improves CatBoost's performance.
+These results confirm that the simplified pipeline retains most of the predictive power, and that tuning further improves CatBoost's performance. 🚀

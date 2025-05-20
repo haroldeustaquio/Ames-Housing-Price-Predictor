@@ -1,4 +1,4 @@
-# Docker
+# Docker 🐳
 
 ## Summary
 
@@ -15,7 +15,7 @@ This folder contains the files needed to build and run the Dockerized environmen
 
 ---
 
-## Architecture
+## Architecture 🏗️
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6ee76023-2858-49fb-989c-c1bb1a90e465" alt="Architecture">
@@ -23,17 +23,17 @@ This folder contains the files needed to build and run the Dockerized environmen
 
 ---
 
-## Dockerfile
+## Dockerfile 📦
 
 **Purpose:**  
 Defines the base image and steps to build the application container.
 
 **Main steps:**  
-- Specifies the base image (Python).
-- Copies application files and dependencies.
-- Installs required dependencies.
-- Exposes the API port.
-- Sets the container startup command.
+- Specifies the base image (Python). 🐍
+- Copies application files and dependencies. 📁
+- Installs required dependencies. ⚙️
+- Exposes the API port. 🌐
+- Sets the container startup command. 🚀
 
 ---
 
@@ -45,11 +45,11 @@ Defines the base image and steps to build the application container.
 Implements the API output for the house price prediction model, running inside the Docker container.
 
 **Main steps:**  
-- Loads the pre-trained model and its dependencies.
-- Defines API endpoints (e.g., `/predict`).
-- Receives HTTP requests with input data for prediction.
-- Processes received data and makes predictions using the model.
-- Returns the prediction as a JSON response from the API.
+- Loads the pre-trained model and its dependencies. 🧠
+- Defines API endpoints (e.g., `/predict`). 🔗
+- Receives HTTP requests with input data for prediction. 📥
+- Processes received data and makes predictions using the model. 📊
+- Returns the prediction as a JSON response from the API. 📤
 
 ---
 
@@ -59,9 +59,9 @@ Implements the API output for the house price prediction model, running inside t
 Contains reusable preprocessing blocks for the pipeline, such as categorical encoders (`CatBoostEncoderWrapper`), feature engineering (`FeatureEngineering`), and column selection (`ColumnSelector`).
 
 **Main steps:**  
-- Encodes categorical variables using CatBoostEncoder.
-- Creates new features relevant to the model.
-- Selects column subsets for the pipeline.
+- Encodes categorical variables using CatBoostEncoder. 🏷️
+- Creates new features relevant to the model. ➕
+- Selects column subsets for the pipeline. 📑
 
 ---
 
@@ -71,13 +71,13 @@ Contains reusable preprocessing blocks for the pipeline, such as categorical enc
 Script to generate and save the processing pipeline and/or trained model to be used by the API.
 
 **Main steps:**  
-- Loads processed data needed for training.
-- Defines and trains the preprocessing pipeline and model.
-- Saves the pipeline and/or model in the required format for later use in production within the Docker container.
+- Loads processed data needed for training. 📊
+- Defines and trains the preprocessing pipeline and model. 🏗️
+- Saves the pipeline and/or model in the required format for later use in production within the Docker container. 💾
 
 ---
 
-## Usage
+## Usage 🛠️
 
 1. Generate the pipeline and/or model before building the image:
    ```sh
