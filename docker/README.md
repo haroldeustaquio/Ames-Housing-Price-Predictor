@@ -18,7 +18,7 @@ This folder contains the files needed to build and run the Dockerized environmen
 ## Architecture 🏗️
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6ee76023-2858-49fb-989c-c1bb1a90e465" alt="Architecture">
+  <img src="https://github.com/user-attachments/assets/3746c28f-7509-4132-b61e-5b24ba714b4a" alt="Architecture">
 </p>
 
 ---

@@ -39,7 +39,7 @@ The `notebooks/` directory documents the full workflow in detail, from initial d
 
 ---
 
-## Usage
+## Deploy using GCP
 
 🛠️ **Step 1: Authenticate and select your Google Cloud project**  
 Log in and set your project:
