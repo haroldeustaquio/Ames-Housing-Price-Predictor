@@ -2,36 +2,34 @@
 
 ## Summary
 
-Esta carpeta contiene los archivos necesarios para construir y ejecutar el entorno Dockerizado del proyecto Ames Housing Price Predictor.
+This folder contains the files needed to build and run the Dockerized environment for the Ames Housing Price Predictor project.
 
 **Content**
 - [Architecture](#architecture)
 - [Dockerfile](#dockerfile)
 - [app/](#app)
-    - [main.py](#mainpy)
-    - [preprocessing_blocks.py](#preprocessing_blockspy)
-    - [generate_pipeline.py](#generate_pipelinepy)
-- [Use](#use)
+   - [main.py](#mainpy)
+   - [preprocessing_blocks.py](#preprocessing_blockspy)
+   - [generate_pipeline.py](#generate_pipelinepy)
+- [Usage](#usage)
 
 ---
 
 ## Architecture
-
-
 
 ---
 
 ## Dockerfile
 
 **Purpose:**  
-Define la imagen base y los pasos para construir el contenedor de la aplicación.
+Defines the base image and steps to build the application container.
 
 **Main steps:**  
-- Especifica la imagen base (Python).
-- Copia los archivos de la aplicación y dependencias.
-- Instala las dependencias necesarias.
-- Expone el puerto de la API.
-- Define el comando de inicio del contenedor.
+- Specifies the base image (Python).
+- Copies application files and dependencies.
+- Installs required dependencies.
+- Exposes the API port.
+- Sets the container startup command.
 
 ---
 
@@ -40,80 +38,73 @@ Define la imagen base y los pasos para construir el contenedor de la aplicación
 ### main.py
 
 **Purpose:**  
-Implementa la salida de la API para el modelo de predicción de precios de viviendas, ejecutándose dentro del contenedor Docker.
+Implements the API output for the house price prediction model, running inside the Docker container.
 
 **Main steps:**  
-- Carga el modelo previamente entrenado y sus dependencias.
-- Define los endpoints de la API (por ejemplo, `/predict`).
-- Recibe solicitudes HTTP con datos de entrada para predicción.
-- Procesa los datos recibidos y realiza la predicción usando el modelo.
-- Devuelve la predicción en formato JSON como respuesta de la API.
-
-
+- Loads the pre-trained model and its dependencies.
+- Defines API endpoints (e.g., `/predict`).
+- Receives HTTP requests with input data for prediction.
+- Processes received data and makes predictions using the model.
+- Returns the prediction as a JSON response from the API.
 
 ---
 
 ### preprocessing_blocks.py
 
 **Purpose:**  
-Contiene bloques reutilizables de preprocesamiento para el pipeline, como codificadores categóricos (`CatBoostEncoderWrapper`), ingeniería de variables (`FeatureEngineering`) y selección de columnas (`ColumnSelector`).
+Contains reusable preprocessing blocks for the pipeline, such as categorical encoders (`CatBoostEncoderWrapper`), feature engineering (`FeatureEngineering`), and column selection (`ColumnSelector`).
 
 **Main steps:**  
-- Codificación de variables categóricas usando CatBoostEncoder.
-- Creación de nuevas variables relevantes para el modelo.
-- Selección de subconjuntos de columnas para el pipeline.
-
-
-
+- Encodes categorical variables using CatBoostEncoder.
+- Creates new features relevant to the model.
+- Selects column subsets for the pipeline.
 
 ---
 
 ### generate_pipeline.py
 
 **Purpose:**  
-Script para generar y guardar el pipeline de procesamiento y/o el modelo entrenado que será utilizado por la API.
+Script to generate and save the processing pipeline and/or trained model to be used by the API.
 
 **Main steps:**  
-- Carga los datos procesados necesarios para el entrenamiento.
-- Define y entrena el pipeline de preprocesamiento y el modelo.
-- Guarda el pipeline y/o modelo en el formato requerido para su posterior uso en producción dentro del contenedor Docker.
+- Loads processed data needed for training.
+- Defines and trains the preprocessing pipeline and model.
+- Saves the pipeline and/or model in the required format for later use in production within the Docker container.
 
 ---
 
-## Use
+## Usage
 
-1. Generar el pipeline y/o modelo antes de construir la imagen:
+1. Generate the pipeline and/or model before building the image:
    ```sh
    cd docker
    python -m app.generate_pipeline
    ```
-   Esto crea los archivos necesarios (pipeline/modelo) que serán incluidos en la imagen Docker.
+   This creates the necessary files (pipeline/model) to be included in the Docker image.
 
-2. Construir la imagen Docker:
+2. Build the Docker image:
    ```sh
    docker build -t housing-price-predictor-api .
    ```
 
-3. Ejecutar el contenedor:
+3. Run the container:
    ```sh
    docker run -p 8080:8080 housing-price-predictor-api
    ```
 
-4. Verificar la API:
-   Accede a la siguiente URL para comprobar que la API responde correctamente:
+4. Verify the API:
+   Access the following URL to check that the API is responding correctly:
    ```
    http://localhost:8080/
    ```
 
-   Puedes usar Postman, curl o tu navegador.  
-   La respuesta esperada debe ser:
+   You can use Postman, curl, or your browser.  
+   The expected response should be:
 
    ```json
    {
-       "message": "Hi harold!!"
+      "message": "Hi harold!!"
    }
    ```
 
 ---
-
-
