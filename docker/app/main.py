@@ -21,7 +21,7 @@ catboost_model_pro.load_model('app/catboost_model_demo_pro.cbm')
 COLUMN_NAMES = [
     '1st_flr_sf', '2nd_flr_sf', 'total_bsmt_sf', 'overall_qual', 'overall_cond', 
     'neighborhood', 'gr_liv_area','full_bath', 'half_bath', 'bsmt_full_bath', 
-    'bsmt_half_bath', 'garage_cars', 'kitchen_qual','garage_area', 'saleprice'
+    'bsmt_half_bath', 'garage_cars', 'kitchen_qual','garage_area'
     ]
 
 # Modelo de entrada
